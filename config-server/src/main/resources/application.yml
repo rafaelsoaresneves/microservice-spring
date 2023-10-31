@@ -3,9 +3,15 @@ server:
 spring:
   application:
     name: config-server
-  profiles:
-    active:
-      - native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/rafaelsoaresneves/microservice-spring.git
+          default-label: main
+#  profiles:
+#    active:
+#      - native
 
 greeting-service:
   greeting: "ola"
