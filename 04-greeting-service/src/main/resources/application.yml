@@ -10,9 +10,9 @@ spring:
     config:
       profile: qa
 
-#greeting-service:
-#  greeting: "ola"
-#  default-value: "mundo greeting"
+greeting-service:
+  greeting: "ola"
+  default-value: "mundo greeting"
 
 management:
   endpoints:
