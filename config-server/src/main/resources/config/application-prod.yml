@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    active:
+      - native
 
 greeting-service:
   greeting: "ola"
