@@ -2,16 +2,15 @@ server:
   port: 8888
 spring:
   application:
-    name: config-server
+    name: erudio-config-server
+
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/rafaelsoaresneves/microservice-spring.git
+          uri: https://github.com/leandrocgsi/erudio-config-server
+          #username: username
+          #password: password
           default-label: main
-#  profiles:
-#    active:
-#      - native
-greeting-service:
-  greeting: "ola"
-  default-value: "mundo 2"
+          search-paths:
+            - 'greeting-service*'
