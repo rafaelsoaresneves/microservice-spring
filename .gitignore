@@ -22,3 +22,12 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/04-greeting-service/.mvn/wrapper/maven-wrapper.jar
+/config-server/.mvn/wrapper/maven-wrapper.jar
+/04-greeting-service/.mvn/wrapper/maven-wrapper.properties
+/config-server/.mvn/wrapper/maven-wrapper.properties
+/04-greeting-service/mvnw
+/config-server/mvnw
+/04-greeting-service/mvnw.cmd
+/config-server/mvnw.cmd
+/.idea/
