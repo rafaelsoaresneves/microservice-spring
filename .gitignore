@@ -31,3 +31,5 @@ replay_pid*
 /04-greeting-service/mvnw.cmd
 /config-server/mvnw.cmd
 /.idea/
+/04-greeting-service/.mvn/wrapper/maven-wrapper.jar
+/config-server/.mvn/wrapper/maven-wrapper.jar
