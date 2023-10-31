@@ -4,15 +4,15 @@ server:
 spring:
   application:
     name: greeting-service
-#  config:
-#    import: optional:configserver:http://localhost:8888/
-#  cloud:
-#    config:
-#      profile: qa
+  config:
+    import: optional:configserver:http://localhost:8888/
+  cloud:
+    config:
+      profile: qa
 
-greeting-service:
-  greeting: "ola"
-  default-value: "mundo greeting"
+#greeting-service:
+#  greeting: "ola"
+#  default-value: "mundo greeting"
 
 management:
   endpoints:
