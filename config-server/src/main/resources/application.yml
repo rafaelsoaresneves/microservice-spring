@@ -15,4 +15,4 @@ spring:
 
 greeting-service:
   greeting: "ola"
-  default-value: "mundo"
+  default-value: "mundo 2"
