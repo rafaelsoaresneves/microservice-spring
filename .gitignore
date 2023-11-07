@@ -33,3 +33,7 @@ replay_pid*
 /.idea/
 /04-greeting-service/.mvn/wrapper/maven-wrapper.jar
 /config-server/.mvn/wrapper/maven-wrapper.jar
+/04-greeting-service/.mvn/wrapper/maven-wrapper.jar
+/book-service/.mvn/wrapper/maven-wrapper.jar
+/config-server/.mvn/wrapper/maven-wrapper.jar
+/book-service/.mvn/wrapper/maven-wrapper.properties
