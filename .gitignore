@@ -37,3 +37,6 @@ replay_pid*
 /book-service/.mvn/wrapper/maven-wrapper.jar
 /config-server/.mvn/wrapper/maven-wrapper.jar
 /book-service/.mvn/wrapper/maven-wrapper.properties
+/eureka-service-discovery/.mvn/wrapper/maven-wrapper.jar
+/eureka-service-discovery/.mvn/wrapper/maven-wrapper.properties
+/api-gateway/.mvn/

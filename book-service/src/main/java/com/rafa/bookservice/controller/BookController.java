@@ -3,17 +3,13 @@ package com.rafa.bookservice.controller;
 import com.rafa.bookservice.model.Book;
 import com.rafa.bookservice.proxy.CambioProxy;
 import com.rafa.bookservice.repository.BookRepository;
-import com.rafa.bookservice.response.CambioResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.HashMap;
 
 @RestController
@@ -39,7 +35,6 @@ public class BookController {
 
         var book = repository.getBookById(id);
         book.setCurrency(currency);
-        book.setEnviroment(port);
 
         if(book == null)
             throw new RuntimeException("Book Not Found");
@@ -50,6 +45,8 @@ public class BookController {
         params.put("to", currency);
         var cambio = proxy.getCambio(book.getPrice(),"USD", currency);
         book.setPrice(cambio.getConvertedValue());
+        book.setEnviroment("book port: " + port + " cambio port: " + cambio.getEnviroment());
+
         return book;
     }
 

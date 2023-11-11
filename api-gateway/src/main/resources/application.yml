@@ -1,17 +1,12 @@
 server:
-  port: 8080
+  port: 8765
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
 spring:
   application:
-    name: greeting-service
-  config:
-    import: optional:configserver:http://localhost:8888/
-  cloud:
-    config:
-      profile: prod
+    name: api-gateway
 management:
   endpoints:
     enabled-by-default: false
@@ -27,8 +22,9 @@ management:
       enabled: true
     prometheus:
       enabled: true
-
-greeting-service:
-  greeting: "Olá"
-  default-value: "Mundo"
-
+  #cloud:
+  #  gateway:
+  #    discovery:
+  #      locator:
+  #        enabled: true
+  #        lower-case-service-id: true
