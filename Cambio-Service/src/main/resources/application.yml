@@ -44,6 +44,13 @@ management:
     prometheus:
       enabled: true
 
+springdoc:
+  #show-actuator: true
+  #swagger-ui:
+    #path: /cambio-service/swagger-ui/
+  api-docs:
+    path: /cambio-service/v3/api-docs
+
 #management:
 #  endpoints:
 #    web:

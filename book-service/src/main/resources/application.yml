@@ -49,6 +49,13 @@ spring:
     locations:
       classpath: src/main/resources/db/migration
 
+springdoc:
+  show-actuator: true
+  #swagger-ui:
+    #path: /book-service/swagger-ui/
+  api-docs:
+    path: book-service/v3/api-docs
+
 management:
   endpoints:
     enabled-by-default: false
@@ -65,7 +72,6 @@ management:
       enabled: true
     prometheus:
       enabled: true
-
 #management:
 #  endpoints:
 #    web:
