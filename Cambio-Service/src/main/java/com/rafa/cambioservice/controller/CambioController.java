@@ -5,6 +5,8 @@ import com.rafa.cambioservice.model.Cambio;
 import com.rafa.cambioservice.repository.CambioRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +27,8 @@ public class CambioController {
     @Autowired
     private CambioRepository repository;
 
+    private Logger logger = LoggerFactory.getLogger(CambioController.class);
+
     // http://localhost:8000/api/cambio-service/5/USD/BRL
     @Operation(summary = "Get para conversao de valores")
     @GetMapping(value = "/{amount}/{from}/{to}")
@@ -32,6 +36,8 @@ public class CambioController {
             @PathVariable("amount") BigDecimal amount,
             @PathVariable("from") String from,
             @PathVariable("to") String to) {
+
+        logger.info("getCambio received -> {}, {} and {}", amount, from, to);
 
         var port = environment.getProperty("local.server.port");
         var cambio = repository.findCambioByFromAndTo(from, to);

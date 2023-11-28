@@ -3,13 +3,13 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka:8761/eureka
 spring:
   application:
     name: cambio-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cambio_service?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://dockerMySql:3306/cambio_service?useTimezone=true&serverTimezone=UTC
     username: root
     password: root
   jpa:
@@ -21,7 +21,7 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
   flyway:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cambio_service?autoreconnect=true
+    url: jdbc:mysql://dockerMySql:3306/cambio_service?autoreconnect=true
     user: root
     password: root
     locations:
@@ -42,6 +42,14 @@ management:
     metrics:
       enabled: true
     prometheus:
+      enabled: true
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+    propagation:
+      type: w3c
+    baggage:
       enabled: true
 
 springdoc:

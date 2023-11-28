@@ -5,6 +5,8 @@ import com.rafa.bookservice.proxy.CambioProxy;
 import com.rafa.bookservice.repository.BookRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,8 @@ public class BookController {
 
     @Autowired
     private CambioProxy proxy;
+
+    private Logger logger = LoggerFactory.getLogger(BookController.class);
 
     // http://localhost:8100/book-service/1/BRL
     @Operation(summary = "Find a specific book by your id")

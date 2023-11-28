@@ -13,7 +13,7 @@ spring:
           default-label: main
           search-paths:
             - 'greeting-service*'
-  docker:
-    compose:
-      enabled: true
-      file: docker-compose.yml
+#  docker:
+#    compose:
+#      enabled: true
+#      file: docker-compose.yml

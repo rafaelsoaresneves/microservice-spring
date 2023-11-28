@@ -3,7 +3,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka:8761/eureka
 
 resilience4j:
   ratelimiter:
@@ -26,7 +26,7 @@ spring:
     name: book-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/book_service?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://dockerMySql:3306/book_service?useTimezone=true&serverTimezone=UTC
     username: root
     password: root
   jpa:
@@ -42,7 +42,7 @@ spring:
       fail-on-empty-beans: false
   flyway:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/
+    url: jdbc:mysql://dockerMySql:3306/
     schemas: book_service
     user: root
     password: root
@@ -72,6 +72,20 @@ management:
       enabled: true
     prometheus:
       enabled: true
+#  zipkin:
+#    tracing:
+#      endpoint: http://localhost:9411/zipkin/
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+    propagation:
+      type: w3c
+    baggage:
+      enabled: true
+
+
+
 #management:
 #  endpoints:
 #    web:

@@ -3,7 +3,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka:8761/eureka
 spring:
   application:
     name: api-gateway
@@ -42,4 +42,12 @@ management:
     metrics:
       enabled: true
     prometheus:
+      enabled: true
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+    propagation:
+      type: w3c
+    baggage:
       enabled: true
